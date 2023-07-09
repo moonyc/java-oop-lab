@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 
-public class App {
+public class FourPillars {
     public static void main( String[] args ) {
         var result = abstractedLogic();
         var record = new Coordinates(0,0,0); 
@@ -73,7 +73,13 @@ abstract class OriginAware {
     public void setOrigin(Coordinates origin) {
         this.origin = origin;
     }
+
+    public void setOrigin() {
+        this.origin = new Coordinates(0, 0, 0);
+    }
 }
+
+
 class ThreeDTranslation extends OriginAware implements ThreeDTransform {
 
     public ThreeDTranslation(Coordinates origin) {
